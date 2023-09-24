@@ -3,6 +3,12 @@ import random as rd
 
 
 # -------- Functions -------
+def user():
+    """Validates User Input and Error Handling. """
+
+    user_sel = input("Select workout type: AMRAP/EMOM/Chipper/Hero ..or exit\n")
+    user_sel.capitalize()
+
 def exr_base(a, b):
     """Returns a list of placeholders generated from a random range of numbers."""
 
@@ -110,8 +116,34 @@ def emom():
     return ''
 
 
-def chp(c):
-    pass
+def chp():
+    """Generates EMOM (Every Minute on the Minute) Workout"""
+
+    c = chip[rd.randint(0, len(chip) - 1)]
+
+    print("\nCHIPPER:\n-------------------\n")
+
+    c = c.split(',')
+
+    for i in c:
+        print(i.lstrip())
+
+    return ''
+
+
+def hero():
+    """Generates EMOM (Every Minute on the Minute) Workout"""
+
+    h = hro[rd.randint(0, len(hro) - 1)]
+
+    print("\nHERO:\n-------------------\n")
+
+    h = h.split(',')
+
+    for i in h:
+        print(i.lstrip())
+
+    return ''
 
 
 # -------- Main Prg.-------
@@ -122,17 +154,44 @@ ubm = ['Push-ups', 'Diamond Push-ups', 'Chair Dips', 'Decline Push-ups', 'Handst
 lbm = ['Air Squat', 'Jump Squat', 'Lunges', 'Lateral Squat', 'Calf Raise', 'Pistols']
 fbm = ['Burpees', 'High Knees', 'Leg Rises', 'V ups']
 cor = ['Plank', 'Mountain Climbers']
-hro = []
+hro = ['Murph:, 1 Mile run, 100 Pull-ups, 200 Push-Ups, 300 Squats, 1 Mile run',
+       'Monsoor:, 20 Sit-ups w/ 8 second contractions, 50 Push-Ups, Side-Bridge/Plank/Side-Bridge: Hold for 8 sec. '
+       'for a total of 5 mins.,50 Push-Ups,100 Mountain Climbers',
+       'Tellier:\n\nFOR TIME:, 10 Burpees/25 Push-Ups, 10 Burpees/25 Push-Ups/50 Lunges, 10 Burpees/25 Push-Ups/50 '
+       'Lunges/100 Sit-Ups, 10 Burpees/25 Push-Ups/50 Lunges/100 Sit-Ups/ 150 Squats',
+       'Whiting:\n\nAMRAP:, 1 Mile Run, 5 rounds of:\n27 Squats\n18 Push-Ups, \nIf you finish, Start on the run again.']
 chip = ['10 Handstand Push-ups, 20 burpees, 40 Jumping Lunges',
         '100 Air Squats, 90 Sit-ups, 80 Lunges, 70 Burpees, 60 second plank, 50 Mountain Climbers, 40 Push-ups, '
         '20 Jump Squats',
         '100 Pull-ups, 100 Push-ups, 100 Sit-ups, 100 Squats']
 tme = ['5', '10', '15', '20', '25', '30']
-rnd = ['Hero', 'AMRAP', 'EMOM', 'Chipper', 'RFT']
+rnd = ['HERO', 'AMRAP', 'EMOM', 'CHIPPER', 'RFT']
 
 # test1 = amrap()
 # print(test1)
 # test2 = emom()
 # print(test2)
-test3 = chp()
-print(test3)
+# test3 = chp()
+# print(test3)
+# test4 = hero()
+# print(test4)
+
+# Welcome Banner
+print("Body Weight WOD Generator v1.0")
+
+# User input
+u = user()
+
+if user_sel == 'AMRAP':
+    print(amrap())
+if user_sel == 'EMOM':
+    print(emom())
+if user_sel == 'HERO':
+    print(hero())
+if user_sel == 'CHIPPER':
+    print(chp())
+if user_sel == 'EXIT':
+    exit()
+
+
+
