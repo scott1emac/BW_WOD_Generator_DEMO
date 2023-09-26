@@ -3,11 +3,56 @@ import random as rd
 
 
 # -------- Functions -------
+def random():
+    """Generates random workout."""
+
+    # User input.
+    rnd_wo = input("Random Workout Y/N?... \n")
+    rnd_wo = rnd_wo.upper()
+
+    # Raise Exception if invalid input is entered.
+    if rnd_wo != 'Y' and rnd_wo != 'N':
+        raise Exception("input must be from list. Please re-enter selection.")
+
+    if rnd_wo != 'N':
+        rnd_wo = rnd[rd.randint(0, len(rnd) - 1)]
+
+        # Input returns.
+        if rnd_wo == 'AMRAP':
+            print(amrap())
+        if rnd_wo == 'EMOM':
+            print(emom())
+        if rnd_wo == 'HERO':
+            print(hero())
+        if rnd_wo == 'CHIPPER':
+            print(chp())
+
+
 def user():
     """Validates User Input and Error Handling. """
 
-    user_sel = input("Select workout type: AMRAP/EMOM/Chipper/Hero ..or exit\n")
-    user_sel.capitalize()
+    # User Input.
+    u = input("Select workout type: AMRAP/EMOM/Chipper/Hero ..or exit\n")
+    u = u.upper()
+
+    # Raise Exception if invalid input is entered.
+    if u not in rnd and u == exit():
+        raise Exception("input must be from list. Please re-enter selection.")
+
+    # Input returns.
+    if u == 'AMRAP':
+        print(amrap())
+    if u == 'EMOM':
+        print(emom())
+    if u == 'HERO':
+        print(hero())
+    if u == 'CHIPPER':
+        print(chp())
+    if u == 'EXIT':
+        exit()
+
+    return u
+
 
 def exr_base(a, b):
     """Returns a list of placeholders generated from a random range of numbers."""
@@ -50,7 +95,10 @@ def exr_cycle(phl):
 def exr_reps(reps, a, b):
     """Generates exercise repetitions based on list(reps). """
 
+    # length of input list(reps).
     r = len(reps)
+
+    # Generates and appends rep range for exercise to r_num for return.
     r_num = []
     for i in range(r):
         r_num.append(rd.randint(a, b))
@@ -117,14 +165,17 @@ def emom():
 
 
 def chp():
-    """Generates EMOM (Every Minute on the Minute) Workout"""
+    """Generates Chipper Workout"""
 
+    # Generates random chipper workout.
     c = chip[rd.randint(0, len(chip) - 1)]
 
     print("\nCHIPPER:\n-------------------\n")
 
+    # Splits the workout for formatting.
     c = c.split(',')
 
+    # Generates Chipper Workout text return.
     for i in c:
         print(i.lstrip())
 
@@ -132,14 +183,17 @@ def chp():
 
 
 def hero():
-    """Generates EMOM (Every Minute on the Minute) Workout"""
+    """Generates Hero Workout"""
 
+    # Generates random Hero Workout.
     h = hro[rd.randint(0, len(hro) - 1)]
 
     print("\nHERO:\n-------------------\n")
 
+    # Splits the workout for formatting
     h = h.split(',')
 
+    # Generates Hero Workout text return.
     for i in h:
         print(i.lstrip())
 
@@ -165,33 +219,11 @@ chip = ['10 Handstand Push-ups, 20 burpees, 40 Jumping Lunges',
         '20 Jump Squats',
         '100 Pull-ups, 100 Push-ups, 100 Sit-ups, 100 Squats']
 tme = ['5', '10', '15', '20', '25', '30']
-rnd = ['HERO', 'AMRAP', 'EMOM', 'CHIPPER', 'RFT']
-
-# test1 = amrap()
-# print(test1)
-# test2 = emom()
-# print(test2)
-# test3 = chp()
-# print(test3)
-# test4 = hero()
-# print(test4)
+rnd = ['HERO', 'AMRAP', 'EMOM', 'CHIPPER']
 
 # Welcome Banner
 print("Body Weight WOD Generator v1.0")
 
 # User input
-u = user()
-
-if user_sel == 'AMRAP':
-    print(amrap())
-if user_sel == 'EMOM':
-    print(emom())
-if user_sel == 'HERO':
-    print(hero())
-if user_sel == 'CHIPPER':
-    print(chp())
-if user_sel == 'EXIT':
-    exit()
-
-
-
+random()
+user()
