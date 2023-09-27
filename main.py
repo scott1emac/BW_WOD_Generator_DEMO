@@ -3,6 +3,17 @@ import random as rd
 
 
 # -------- Functions -------
+def regenerate(check):
+    if check == '':
+        check = input("Re-Generate Workout? Y/N...")
+        check = check.upper()
+    if check != 'Y' and check != 'N':
+        print("input must be Y or N. Please re-enter selection.")
+        regenerate('')
+
+    return
+
+
 def random():
     """Generates random workout."""
 
@@ -10,10 +21,12 @@ def random():
     rnd_wo = input("Random Workout Y/N?... \n")
     rnd_wo = rnd_wo.upper()
 
-    # Raise Exception if invalid input is entered.
+    # Check if invalid input is entered.
     if rnd_wo != 'Y' and rnd_wo != 'N':
-        raise Exception("input must be from list. Please re-enter selection.")
+        print("input must be Y or N. Please re-enter selection.")
+        random()
 
+    # Assigns random index for workout type.
     if rnd_wo != 'N':
         rnd_wo = rnd[rd.randint(0, len(rnd) - 1)]
 
@@ -26,6 +39,18 @@ def random():
             print(hero())
         if rnd_wo == 'CHIPPER':
             print(chp())
+    else:
+        user()
+
+    workout = input("Re-Generate Workout? Y/N...")
+    workout = workout.upper()
+
+    regenerate(workout)
+
+    if workout == 'Y':
+        random()
+    else:
+        return ext()
 
 
 def user():
@@ -35,9 +60,10 @@ def user():
     u = input("Select workout type: AMRAP/EMOM/Chipper/Hero ..or exit\n")
     u = u.upper()
 
-    # Raise Exception if invalid input is entered.
+    # Check if invalid input is entered.
     if u not in rnd and u == exit():
-        raise Exception("input must be from list. Please re-enter selection.")
+        print("input must be from list. Please re-enter selection.")
+        user()
 
     # Input returns.
     if u == 'AMRAP':
@@ -49,7 +75,7 @@ def user():
     if u == 'CHIPPER':
         print(chp())
     if u == 'EXIT':
-        exit()
+        ext()
 
     return u
 
@@ -200,6 +226,22 @@ def hero():
     return ''
 
 
+def ext():
+    """Exit Prompt."""
+
+    e = input("Do you want to exit? Y/N... \n")
+    e = e.upper()
+
+    if e != 'Y' and e != 'N':
+        print("input must be Y or N. Please re-enter selection.")
+        ext()
+
+    if e == 'Y':
+        exit()
+    else:
+        random()
+
+
 # -------- Main Prg.-------
 
 
@@ -226,4 +268,3 @@ print("Body Weight WOD Generator v1.0")
 
 # User input
 random()
-user()
