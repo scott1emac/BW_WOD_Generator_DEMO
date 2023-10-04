@@ -11,10 +11,10 @@ def regenerate(check):
         print("input must be Y or N. Please re-enter selection.")
         regenerate('')
 
-    return
+    return True
 
 
-def random():
+def prg2():
     """Generates random workout."""
 
     # User input.
@@ -24,7 +24,7 @@ def random():
     # Check if invalid input is entered.
     if rnd_wo != 'Y' and rnd_wo != 'N':
         print("input must be Y or N. Please re-enter selection.")
-        random()
+        prg()
 
     # Assigns random index for workout type.
     if rnd_wo != 'N':
@@ -48,22 +48,22 @@ def random():
     regenerate(workout)
 
     if workout == 'Y':
-        random()
+        prg()
     else:
         return ext()
 
 
-def user():
+def prg():
     """Validates User Input and Error Handling. """
 
     # User Input.
-    u = input("Select workout type: AMRAP/EMOM/Chipper/Hero ..or exit\n")
+    u = input("Select workout type: AMRAP/EMOM/Chipper/Hero ..or e to exit.\n")
     u = u.upper()
 
     # Check if invalid input is entered.
-    if u not in rnd and u == exit():
-        print("input must be from list. Please re-enter selection.")
-        user()
+    if u not in rnd or u == 'EXIT':
+        print("input must be from shown examples. Please re-enter selection.")
+        prg()
 
     # Input returns.
     if u == 'AMRAP':
@@ -74,8 +74,8 @@ def user():
         print(hero())
     if u == 'CHIPPER':
         print(chp())
-    if u == 'EXIT':
-        ext()
+    elif u == 'EXIT':
+        return ext()
 
     return u
 
@@ -239,7 +239,7 @@ def ext():
     if e == 'Y':
         exit()
     else:
-        random()
+        prg()
 
 
 # -------- Main Prg.-------
@@ -267,4 +267,4 @@ rnd = ['HERO', 'AMRAP', 'EMOM', 'CHIPPER']
 print("Body Weight WOD Generator v1.0")
 
 # User input
-random()
+prg()
