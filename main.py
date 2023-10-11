@@ -61,7 +61,7 @@ def prg():
     u = u.upper()
 
     # Check if invalid input is entered.
-    if u not in rnd or u == 'EXIT':
+    if u not in rnd and u != 'E':
         print("input must be from shown examples. Please re-enter selection.")
         prg()
 
@@ -74,7 +74,7 @@ def prg():
         print(hero())
     if u == 'CHIPPER':
         print(chp())
-    elif u == 'EXIT':
+    elif u == 'E':
         return ext()
 
     return u
@@ -158,6 +158,7 @@ def amrap():
         exr.pop(0)
         reps.pop(0)
 
+    regenerate()
     return ''
 
 
