@@ -1,63 +1,43 @@
-# BW WOD GENERATOR v1.0
+# --BW WOD GENERATOR v1.0--
 import random as rd
 
 
 # -------- Functions -------
-def regenerate(check):
-    if check == '':
-        check = input("Re-Generate Workout? Y/N...")
-        check = check.upper()
-    if check != 'Y' and check != 'N':
+def regenerate(e):
+    """ Regenerates previous workout type. """
+
+    # User Input
+    regen = input("Re-Generate Workout? Y/N...")
+    regen = regen.upper()
+
+    # Input Validation
+    if regen != 'Y' and regen != 'N':
         print("input must be Y or N. Please re-enter selection.")
         regenerate('')
 
-    return True
-
-
-def prg2():
-    """Generates random workout."""
-
-    # User input.
-    rnd_wo = input("Random Workout Y/N?... \n")
-    rnd_wo = rnd_wo.upper()
-
-    # Check if invalid input is entered.
-    if rnd_wo != 'Y' and rnd_wo != 'N':
-        print("input must be Y or N. Please re-enter selection.")
-        prg()
-
-    # Assigns random index for workout type.
-    if rnd_wo != 'N':
-        rnd_wo = rnd[rd.randint(0, len(rnd) - 1)]
-
-        # Input returns.
-        if rnd_wo == 'AMRAP':
+    # Regen workout(e)
+    if regen == 'Y':
+        if e == 'RANDOM':
+            random()
+        if e == 'AMRAP':
             print(amrap())
-        if rnd_wo == 'EMOM':
+        if e == 'EMOM':
             print(emom())
-        if rnd_wo == 'HERO':
+        if e == 'HERO':
             print(hero())
-        if rnd_wo == 'CHIPPER':
+        if e == 'CHIPPER':
             print(chp())
     else:
-        user()
+        ext()
 
-    workout = input("Re-Generate Workout? Y/N...")
-    workout = workout.upper()
-
-    regenerate(workout)
-
-    if workout == 'Y':
-        prg()
-    else:
-        return ext()
+    return
 
 
 def prg():
     """Validates User Input and Error Handling. """
 
     # User Input.
-    u = input("Select workout type: AMRAP/EMOM/Chipper/Hero ..or e to exit.\n")
+    u = input("Select workout type: AMRAP/EMOM/Chipper/Hero/Random... or e to exit.\n")
     u = u.upper()
 
     # Check if invalid input is entered.
@@ -65,7 +45,9 @@ def prg():
         print("input must be from shown examples. Please re-enter selection.")
         prg()
 
-    # Input returns.
+    # Input generation.
+    if u == 'RANDOM':
+        random()
     if u == 'AMRAP':
         print(amrap())
     if u == 'EMOM':
@@ -77,7 +59,9 @@ def prg():
     elif u == 'E':
         return ext()
 
-    return u
+    # Initiates Regen Function.
+    while True:
+        regenerate(u)
 
 
 def exr_base(a, b):
@@ -132,6 +116,24 @@ def exr_reps(reps, a, b):
     return r_num
 
 
+def random():
+    """Generates random workout."""
+
+    rnd_wo = rnd[rd.randint(0, len(rnd) - 1)]
+
+    # Input returns.
+    if rnd_wo == 'AMRAP':
+        print(amrap())
+    if rnd_wo == 'EMOM':
+        print(emom())
+    if rnd_wo == 'HERO':
+        print(hero())
+    if rnd_wo == 'CHIPPER':
+        print(chp())
+
+    return ''
+
+
 def amrap():
     """Generates AMRAP (As Many Rounds As Possible) Workout"""
 
@@ -158,7 +160,6 @@ def amrap():
         exr.pop(0)
         reps.pop(0)
 
-    regenerate()
     return ''
 
 
@@ -230,13 +231,16 @@ def hero():
 def ext():
     """Exit Prompt."""
 
+    # User Input
     e = input("Do you want to exit? Y/N... \n")
     e = e.upper()
 
+    # Input Validation
     if e != 'Y' and e != 'N':
         print("input must be Y or N. Please re-enter selection.")
         ext()
 
+    # Input Return
     if e == 'Y':
         exit()
     else:
@@ -262,7 +266,7 @@ chip = ['10 Handstand Push-ups, 20 burpees, 40 Jumping Lunges',
         '20 Jump Squats',
         '100 Pull-ups, 100 Push-ups, 100 Sit-ups, 100 Squats']
 tme = ['5', '10', '15', '20', '25', '30']
-rnd = ['HERO', 'AMRAP', 'EMOM', 'CHIPPER']
+rnd = ['HERO', 'AMRAP', 'EMOM', 'CHIPPER', 'RANDOM']
 
 # Welcome Banner
 print("Body Weight WOD Generator v1.0")

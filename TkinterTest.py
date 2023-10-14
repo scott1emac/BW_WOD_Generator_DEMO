@@ -235,6 +235,7 @@ rnd_str = tk.StringVar()
 title_label = ttk.Label(root, text='BODYWEIGHT WOD GENERATOR v1.0', font='Arial, 16 bold underline')
 title_label.pack(padx=20, pady=20)
 
+# Button Grid
 btn_frame = ttk.Frame(root)
 btn_frame.columnconfigure(0, weight=1)
 btn_frame.columnconfigure(1, weight=1)
@@ -294,8 +295,6 @@ btn4_output = tk.Label(btn_output_frame,
                        textvariable=chp_str,
                        anchor='center')
 btn4_output.pack()
-
-# Button 5 (RANDOM)
 
 btn_output_frame.pack()
 # Exit Frame
