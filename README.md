@@ -68,7 +68,7 @@ If you would like to regenerate the workout, select the button again.
 -  Link to exercie movement types.
 -  Tkinter Version: Frame does not clear when different workout type is selected.
 -  Tkinter Version: Certain workout returns have view clipped.
--  Tkinter Version: Close button overlayed and inoperable when multiple different workouts are selected. 
+-  Tkinter Version: Close button overlayed and inoperable when multiple, different type workouts are selected. 
 
 ##
 (CAPSTONE PROJECT NCLAB)
