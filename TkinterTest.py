@@ -1,4 +1,6 @@
 # --BW WOD GENERATOR v1.0--
+
+# -- Modules --
 import random as rd
 import tkinter as tk
 import ttkbootstrap as ttk
@@ -85,7 +87,7 @@ def amrap():
         exr.pop(0)
         reps.pop(0)
 
-    return amrap_str.set(a)
+    return main_str.set(a)
 
 
 def emom():
@@ -116,7 +118,7 @@ def emom():
         exr.pop(0)
         reps.pop(0)
 
-    return emom_str.set(e)
+    return main_str.set(e)
 
 
 def hero():
@@ -138,7 +140,7 @@ def hero():
         text_return += f"{hero_exr[0]}"
         hero_exr.pop(0)
 
-    return hero_str.set(text_return)
+    return main_str.set(text_return)
 
 
 def chp():
@@ -161,7 +163,7 @@ def chp():
         text_return += f"{chp_exr[0]}"
         chp_exr.pop(0)
 
-    return chp_str.set(text_return)
+    return main_str.set(text_return)
 
 
 def random():
@@ -180,10 +182,6 @@ def random():
     if r == 4:
         chp()
 
-    rnd_exr = r
-
-    return rnd_str.set(str(rnd_exr))
-
 
 def ext():
     """Closes the Program"""
@@ -197,13 +195,14 @@ ubm = ['Push-ups', 'Diamond Push-ups', 'Chair Dips', 'Decline Push-ups', 'Handst
 lbm = ['Air Squat', 'Jump Squat', 'Lunges', 'Lateral Squat', 'Calf Raise', 'Pistols']
 fbm = ['Burpees', 'High Knees', 'Leg Rises', 'V ups']
 cor = ['Plank', 'Mountain Climbers']
-hro = ['Murph:\n, 1 Mile run\n, 100 Pull-ups\n, 200 Push-Ups\n, 300 Squats\n, 1 Mile run',
-       'Monsoor:\n, 20 Sit-ups w/ 8 second contractions\n, 50 Push-Ups\n, Side-Bridge/Plank/Side-Bridge: Hold for 8 '
+hro = ['\nMurph:\n, 1 Mile run\n, 100 Pull-ups\n, 200 Push-Ups\n, 300 Squats\n, 1 Mile run',
+       '\nMonsoor:\n, 20 Sit-ups w/ 8 second contractions\n, 50 Push-Ups\n, Side-Bridge/Plank/Side-Bridge: Hold for 8 '
        'sec.'
        'for a total of 5 mins.\n,50 Push-Ups,100 Mountain Climbers',
-       'Tellier:\nFOR TIME:\n, 10 Burpees/25 Push-Ups\n, 10 Burpees/25 Push-Ups/50 Lunges\n, 10 Burpees/25 Push-Ups/50 '
+       '\nTellier:\nFOR TIME:\n, 10 Burpees/25 Push-Ups\n, 10 Burpees/25 Push-Ups/50 Lunges\n, 10 Burpees/25 '
+       'Push-Ups/50'
        'Lunges/100 Sit-Ups\n, 10 Burpees/25 Push-Ups/50 Lunges/100 Sit-Ups/ 150 Squats',
-       'Whiting:\nAMRAP:\n, 1 Mile Run\n, 5 rounds of:\n27 Squats\n18 Push-Ups, \nIf you finish, Start on the run '
+       '\nWhiting:\nAMRAP:\n, 1 Mile Run\n, 5 rounds of:\n27 Squats\n18 Push-Ups, \nIf you finish, Start on the run '
        'again.']
 chip = ['10 Handstand Push-ups\n, 20 burpees\n, 40 Jumping Lunges',
         '100 Air Squats\n, 90 Sit-ups\n, 80 Lunges\n, 70 Burpees\n, 60 second plank\n, 50 Mountain Climbers\n, '
@@ -222,14 +221,10 @@ print("Body Weight WOD Generator v1.0")
 # ----Initialize GUI----
 root = ttk.Window(themename='darkly')
 root.title("BW_WOD_GENERATOR v1.0")
-root.geometry('480x720')
+root.geometry('720x500')
 
 # String Var for initialization of Tkinter Buttons
-amrap_str = tk.StringVar()
-emom_str = tk.StringVar()
-hero_str = tk.StringVar()
-chp_str = tk.StringVar()
-rnd_str = tk.StringVar()
+main_str = tk.StringVar()
 
 # Title Display//Text, Font, and Size Control of GUI.
 title_label = ttk.Label(root, text='BODYWEIGHT WOD GENERATOR v1.0', font='Arial, 16 bold underline')
@@ -268,35 +263,15 @@ btn_frame.pack(fill='x')
 
 btn_output_frame = tk.Frame(root)
 
-# Button 1 (AMRAP)
+# Button 1 (MainOutput)
 btn1_output = tk.Label(btn_output_frame,
                        font=exrDisplay,
-                       textvariable=amrap_str,
+                       textvariable=main_str,
                        anchor='center')
 btn1_output.pack()
 
-# Button 2 (EMOM)
-btn2_output = tk.Label(btn_output_frame,
-                       font=exrDisplay,
-                       textvariable=emom_str,
-                       anchor='center')
-btn2_output.pack()
-
-# Button 3 (HERO)
-btn3_output = tk.Label(btn_output_frame,
-                       font=exrDisplay,
-                       textvariable=hero_str,
-                       anchor='center')
-btn3_output.pack()
-
-# Button 4 (CHIPPER)
-btn4_output = tk.Label(btn_output_frame,
-                       font=exrDisplay,
-                       textvariable=chp_str,
-                       anchor='center')
-btn4_output.pack()
-
 btn_output_frame.pack()
+
 # Exit Frame
 ext_frame = tk.Frame(root)
 ext_frame.columnconfigure(0, weight=1)
