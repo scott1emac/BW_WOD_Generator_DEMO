@@ -1,10 +1,22 @@
-## BW_WOD_Generator_DEMO v1.0 
+# BW_WOD_Generator_DEMO v1.0 
 
 Demo program that generates a bodyweight Work Out of the Day.
 
 The purpose of this project was to create a working skeleton of a program that randomly generates a Workout of The Day (WOD) using only bodyweight exercise’s. 
 
-# Workout Types
+
+TABLE OF CONTENTS:
+==================
+
+* [Workout Types](https://github.com/scott1emac/BW_WOD_Generator_DEMO/edit/main/README.md#workout-types)
+
+* [Exercise Movements](https://github.com/scott1emac/BW_WOD_Generator_DEMO/edit/main/README.md#exercise-movements)
+
+* [How To Use This Program](https://github.com/scott1emac/BW_WOD_Generator_DEMO/edit/main/README.md#how-to-use-this-program)
+  
+* [Issues](https://github.com/scott1emac/BW_WOD_Generator_DEMO/edit/main/README.md#known-issues-works-in-progress)
+
+## Workout Types
 
 AMRAP: 
 
@@ -34,10 +46,10 @@ A Hero WOD is the definition itself, which is to honor and pay tribute to the sa
 ![HERO](https://github.com/scott1emac/BW_WOD_Generator_DEMO/assets/125082587/2d864f12-0208-41d7-a8ba-46e95e07461c)
 
 
-# Exercise Movements
+## Exercise Movements
 Information on how to perform these exercises can be found here (insert link here).
 
-# How to use this Program
+## How to use this Program
 
 ***Disclaimer: You understand that participating in any exercise or exercise program carries the possibility of physical injury. You should be in good physical condition and able to participate in the exercises. If at anytime during the course of using this program you notice physical discomfort, stop immediately. If you engage in this exercise or exercise program, you agree that you do so at your own risk, are voluntarily participating in these activities, and assume all risk of injury to yourself.*** 
 
@@ -63,12 +75,12 @@ If you would like to regenerate the workout, select the button again.
 
 
 
-# ***Known Issues (Works in Progress)***
+## ***Known Issues (Works in Progress)***
 
 -  Link to exercie movement types.
 -  Tkinter Version: Frame does not clear when different workout type is selected.
 -  Tkinter Version: Certain workout returns have view clipped.
--  Tkinter Version: Close button overlayed and inoperable when multiple different workouts are selected. 
+-  Tkinter Version: Close button overlayed and inoperable when multiple, different type workouts are selected. 
 
 ##
 (CAPSTONE PROJECT NCLAB)
