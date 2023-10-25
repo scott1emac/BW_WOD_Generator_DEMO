@@ -38,9 +38,12 @@ A Hero WOD is the definition itself, which is to honor and pay tribute to the sa
 ## Exercise Movements
 Information on how to perform these exercises can be found here (insert link here).
 
-## Install Tkinter and TTKBootstrap
+## Install TTKBootstrap (...if needed)
 Make sure your python installer is up to date. 
+
 Next, type the following command into the Command Terminal:
+
+![TTk_install](https://github.com/scott1emac/BW_WOD_Generator_DEMO/assets/125082587/38aec922-098d-465c-813e-effa7451143f)
 
 
 ## How to use this Program
