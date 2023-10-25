@@ -41,7 +41,7 @@ Information on how to perform these exercises can be found here (insert link her
 ## Install TTKBootstrap (...if needed)
 Make sure your python installer is up to date. 
 
-Next, type the following command into the Command Terminal:
+Next, open Powershell and type the following command:
 
 ![TTk_install](https://github.com/scott1emac/BW_WOD_Generator_DEMO/assets/125082587/38aec922-098d-465c-813e-effa7451143f)
 
