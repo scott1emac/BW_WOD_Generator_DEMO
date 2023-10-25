@@ -5,17 +5,6 @@ Demo program that generates a bodyweight Work Out of the Day.
 The purpose of this project was to create a working skeleton of a program that randomly generates a Workout of The Day (WOD) using only bodyweight exercise’s. 
 
 
-TABLE OF CONTENTS:
-==================
-
-* [Workout Types](https://github.com/scott1emac/BW_WOD_Generator_DEMO/edit/main/README.md#workout-types)
-
-* [Exercise Movements](https://github.com/scott1emac/BW_WOD_Generator_DEMO/edit/main/README.md#exercise-movements)
-
-* [How To Use This Program](https://github.com/scott1emac/BW_WOD_Generator_DEMO/edit/main/README.md#how-to-use-this-program)
-  
-* [Issues](https://github.com/scott1emac/BW_WOD_Generator_DEMO/edit/main/README.md#known-issues-works-in-progress)
-
 ## Workout Types
 
 AMRAP: 
@@ -49,6 +38,11 @@ A Hero WOD is the definition itself, which is to honor and pay tribute to the sa
 ## Exercise Movements
 Information on how to perform these exercises can be found here (insert link here).
 
+## Install Tkinter and TTKBootstrap
+Make sure your python installer is up to date. 
+Next, type the following command into the Command Terminal:
+
+
 ## How to use this Program
 
 ***Disclaimer: You understand that participating in any exercise or exercise program carries the possibility of physical injury. You should be in good physical condition and able to participate in the exercises. If at anytime during the course of using this program you notice physical discomfort, stop immediately. If you engage in this exercise or exercise program, you agree that you do so at your own risk, are voluntarily participating in these activities, and assume all risk of injury to yourself.*** 
@@ -59,7 +53,7 @@ Ensure you are adequately hydrated.
 
 Run your choice of file:
 -  Terminal View: Run the main.py file.
--  Tkinter (IN WORK): Run the TkinterTest.py file
+-  Tkinter: Run the TkinterTest.py file
 
 Terminal Version:
 Follow the prompts in the terminal view and have an enjoyable workout. 
@@ -78,9 +72,6 @@ If you would like to regenerate the workout, select the button again.
 ## ***Known Issues (Works in Progress)***
 
 -  Link to exercie movement types.
--  Tkinter Version: Frame does not clear when different workout type is selected.
--  Tkinter Version: Certain workout returns have view clipped.
--  Tkinter Version: Close button overlayed and inoperable when multiple, different type workouts are selected. 
 
 ##
 (CAPSTONE PROJECT NCLAB)
