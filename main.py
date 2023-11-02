@@ -19,13 +19,13 @@ def regenerate(e):
     if regen == 'Y':
         if e == 'RANDOM':
             random()
-        if e == 'AMRAP':
+        elif e == 'AMRAP':
             print(amrap())
-        if e == 'EMOM':
+        elif e == 'EMOM':
             print(emom())
-        if e == 'HERO':
+        elif e == 'HERO':
             print(hero())
-        if e == 'CHIPPER':
+        else:
             print(chp())
     else:
         ext()
@@ -48,15 +48,15 @@ def prg():
     # Input generation.
     if u == 'RANDOM':
         random()
-    if u == 'AMRAP':
+    elif u == 'AMRAP':
         print(amrap())
-    if u == 'EMOM':
+    elif u == 'EMOM':
         print(emom())
-    if u == 'HERO':
+    elif u == 'HERO':
         print(hero())
-    if u == 'CHIPPER':
+    elif u == 'CHIPPER':
         print(chp())
-    elif u == 'E':
+    else:
         return ext()
 
     # Initiates Regen Function.
@@ -124,11 +124,11 @@ def random():
     # Input returns.
     if rnd_wo == 'AMRAP':
         print(amrap())
-    if rnd_wo == 'EMOM':
+    elif rnd_wo == 'EMOM':
         print(emom())
-    if rnd_wo == 'HERO':
+    elif rnd_wo == 'HERO':
         print(hero())
-    if rnd_wo == 'CHIPPER':
+    elif rnd_wo == 'CHIPPER':
         print(chp())
 
     return ''

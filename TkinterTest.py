@@ -175,11 +175,11 @@ def random():
 
     if r == 1:
         amrap()
-    if r == 2:
+    elif r == 2:
         emom()
-    if r == 3:
+    elif r == 3:
         hero()
-    if r == 4:
+    else:
         chp()
 
 
